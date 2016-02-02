@@ -1,0 +1,17 @@
+<ion-view view-title="Produtos">
+    <ion-nav-buttons side="secondary">
+        <button class="button" ng-click="recarregarListaProdutos()">
+            <i class="icon ion-ios-refresh-empty"></i>
+        </button>
+    </ion-nav-buttons>
+    <ion-content>
+        <ion-list>
+            <ion-item class="item-avatar item-icon-right" type="item-text-wrap" ng-repeat="produto in produtos" href="#/app/produtos/{{produto._id}}">
+                <img ng-src="{{produto.imagem}}">
+                <h2>{{produto.nome}}</h2>
+                <p>{{produto.descricao}}</p>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

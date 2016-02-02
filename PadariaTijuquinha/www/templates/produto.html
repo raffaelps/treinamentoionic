@@ -1,0 +1,35 @@
+<ion-view view-title="Produto">
+    <ion-content>
+        <div class="list card">
+
+            <div class="item">
+                <h2>{{ produto.nome }}</h2>
+                <p>{{ produto.descricao }}</p>
+            </div>
+
+            <div class="item item-image">
+                <img src="{{ produto.imagem }}">
+            </div>
+
+            <a class="item item-icon-left assertive" ng-click="fazerPedido()" ng-hide="usuarioLogado == undefined">
+                <i class="icon ion-ios-cart-outline"></i> Fazer pedido
+            </a>
+
+            <label class="item item-input item-select" ng-hide="usuarioLogado == undefined">
+                <div class="input-label">
+                    Quantidade
+                </div>
+                <select ng-model="pedido.quantidadePedido">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </label>
+        </div>
+        <div class="card center" ng-show="usuarioLogado == undefined">
+            <div class="item item-text-wrap">
+                Você precisa estar logado para fazer pedidos.
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

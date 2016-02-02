@@ -1,0 +1,22 @@
+<ion-view view-title="Pedidos">
+    <ion-nav-buttons side="secondary">
+        <button class="button" ng-click="recarregarListaPedidos()">
+            <i class="icon ion-ios-refresh-empty"></i>
+        </button>
+    </ion-nav-buttons>
+    <ion-content>
+        <ion-list>
+            <ion-item class="item-avatar item-icon-right" type="item-text-wrap" ng-repeat="pedido in pedidos">
+                <img ng-src="{{pedido.produto.imagem}}">
+                <h2>{{ pedido.produto.nome }}</h2>
+                <p>{{ pedido.data | date: 'dd/MM/yyyy' }}</p>
+                <h5>Quantidade: {{ pedido.quantidade }}</h5>
+            </ion-item>
+        </ion-list>
+        <div class="card center" ng-show="usuarioLogado == undefined">
+            <div class="item item-text-wrap">
+                Você precisa estar logado para ver seus pedidos.
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
